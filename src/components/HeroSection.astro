@@ -1,0 +1,22 @@
+---
+import Section from "./Section.astro";
+---
+
+<Section title="Model Y" subtitle="Lease starting at $399/mo*" color="white">
+  <div slot="footer">
+    <a
+      class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+      href="#"
+    >
+      Prueba de conducción</a
+    >
+  </div>
+
+  <video
+    slot="background"
+    class="object-cover min-h-full w-full"
+    autoplay
+    muted
+    loop
+    src="/video.mp4"></video>
+</Section>

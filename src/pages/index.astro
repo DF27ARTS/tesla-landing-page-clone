@@ -1,0 +1,274 @@
+---
+import LandingHeader from "../components/LandingHeader.astro";
+import HeroSection from "../components/HeroSection.astro";
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+---
+
+<Layout title="Tesla Motors">
+  <LandingHeader />
+
+  <main class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
+    <div class="snap-center">
+      <Section
+        title="Model Y"
+        subtitle="Lease starting at $399/mo*"
+        color="white"
+      >
+        <div slot="footer">
+          <a
+            class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+            href="#"
+          >
+            Prueba de conducción</a
+          >
+        </div>
+
+        <div
+          slot="background"
+          class="absolute top-0 bottom-0 h-full w-full z-10"
+        >
+          <video
+            class="object-cover min-h-full w-full"
+            autoplay
+            muted
+            loop
+            src="/video.mp4"></video>
+        </div>
+      </Section>
+    </div>
+
+    <div class="snap-center">
+      <Section
+        title="Model 3"
+        subtitle="Lease starting at $329/mo*"
+        color="white"
+      >
+        <div slot="footer">
+          <a
+            class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+            href="#"
+          >
+            Prueba de conducción</a
+          >
+        </div>
+
+        <div
+          slot="background"
+          class="absolute top-0 bottom-0 h-full w-full z-10"
+        >
+          <img
+            class="object-cover min-h-full w-full"
+            src="/model-3-img.avif"
+            alt="Tesla Model-3 image"
+          />
+        </div>
+      </Section>
+    </div>
+
+    <div class="snap-center">
+      <Section title="Model X" subtitle="From $68,590*" color="#171A20">
+        <div slot="footer">
+          <a
+            class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+            href="#"
+          >
+            Prueba de conducción</a
+          >
+        </div>
+
+        <div
+          slot="background"
+          class="absolute top-0 bottom-0 h-full w-full z-10"
+        >
+          <img
+            class="object-cover min-h-full w-full"
+            src="/model-x-img.avif"
+            alt="Tesla Model-3 image"
+          />
+        </div>
+      </Section>
+    </div>
+
+    <div class="snap-center">
+      <Section title="Model S" subtitle="From $71,090*" color="#171A20">
+        <div slot="footer">
+          <a
+            class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+            href="#"
+          >
+            Prueba de conducción</a
+          >
+        </div>
+
+        <div
+          slot="background"
+          class="absolute top-0 bottom-0 h-full w-full z-10"
+        >
+          <img
+            class="object-cover min-h-full w-full"
+            src="/model-s-img.avif"
+            alt="Tesla Model-3 image"
+          />
+        </div>
+      </Section>
+    </div>
+
+    <div class="snap-center">
+      <Section title="" subtitle="" color="#171A20">
+        <div slot="footer">
+          <a
+            class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+            href="#"
+          >
+            Prueba de conducción</a
+          >
+        </div>
+
+        <div
+          slot="background"
+          class="absolute top-0 bottom-0 h-full w-full z-10"
+        >
+          <img
+            class="object-cover min-h-full w-full"
+            src="/cybertruck-img.avif"
+            alt="Tesla Model-3 image"
+          />
+        </div>
+      </Section>
+    </div>
+
+    <div class="snap-center">
+      <Section
+        title="Experience Tesla"
+        subtitle="Schedule a Demo Drive Today"
+        color="white"
+      >
+        <div slot="footer">
+          <a
+            class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+            href="#"
+          >
+            Prueba de conducción</a
+          >
+        </div>
+
+        <div
+          slot="background"
+          class="absolute top-0 bottom-0 h-full w-full z-10"
+        >
+          <video
+            class="object-cover min-h-full w-full"
+            autoplay
+            muted
+            loop
+            src="/video-two.webm"></video>
+        </div>
+      </Section>
+    </div>
+
+    <div class="snap-center">
+      <Section
+        title="Solar Panels"
+        subtitle="Schedule a Virtual Consultation"
+        color="#171A20"
+      >
+        <div slot="footer">
+          <a
+            class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+            href="#"
+          >
+            Prueba de conducción</a
+          >
+        </div>
+
+        <div
+          slot="background"
+          class="absolute top-0 bottom-0 h-full w-full z-10"
+        >
+          <img
+            class="object-cover min-h-full w-full"
+            src="/solar-panels-img.avif"
+            alt="Tesla Model-3 image"
+          />
+        </div>
+      </Section>
+    </div>
+
+    <div class="snap-center">
+      <Section
+        title="Solar Roof"
+        subtitle="Produce Clean Energy From Your Roof"
+        color="#171A20"
+      >
+        <div slot="footer">
+          <a
+            class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+            href="#"
+          >
+            Prueba de conducción</a
+          >
+        </div>
+
+        <div
+          slot="background"
+          class="absolute top-0 bottom-0 h-full w-full z-10"
+        >
+          <img
+            class="object-cover min-h-full w-full"
+            src="/solar-roof-img.avif"
+            alt="Tesla Model-3 image"
+          />
+        </div>
+      </Section>
+    </div>
+
+    <div class="snap-center">
+      <Section title="Powerwall" subtitle="" color="#171A20">
+        <div slot="footer">
+          <a
+            class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+            href="#"
+          >
+            Prueba de conducción</a
+          >
+        </div>
+
+        <div
+          slot="background"
+          class="absolute top-0 bottom-0 h-full w-full z-10"
+        >
+          <img
+            class="object-cover min-h-full w-full"
+            src="/powerwall-img.avif"
+            alt="Tesla Model-3 image"
+          />
+        </div>
+      </Section>
+    </div>
+
+    <div class="snap-center">
+      <Section title="Accessories" subtitle="" color="#171A20">
+        <div slot="footer">
+          <a
+            class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+            href="#"
+          >
+            Prueba de conducción</a
+          >
+        </div>
+
+        <div
+          slot="background"
+          class="absolute top-0 bottom-0 h-full w-full z-10"
+        >
+          <img
+            class="object-cover min-h-full w-full"
+            src="/accessories-img.avif"
+            alt="Tesla Model-3 image"
+          />
+        </div>
+      </Section>
+    </div>
+  </main>
+</Layout>
