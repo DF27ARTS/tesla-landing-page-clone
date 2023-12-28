@@ -7,7 +7,7 @@ import PersonIcon from "./PersonIcon.astro";
 
 <header
   id="landing-header"
-  class="py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white [& svg]:transition-colors :duration-500"
+  class="isolate py-3 px-10 flex items-center fixed top-0 w-full justify-between z-40 text-white [& svg]:transition-colors"
 >
   <div class="flex flex-grow basis-0">
     <Logo />
@@ -59,13 +59,15 @@ import PersonIcon from "./PersonIcon.astro";
       <PersonIcon />
     </a>
   </nav>
+
+  <section class="absolute left-0 -z-10 marker:top-0 w-full bg-blue-500 h-full">
+  </section>
 </header>
 
 <script>
   const listItems = document.querySelectorAll("#landing-header li");
   const menuBackdrop = document.querySelector("#menu-backdrop") as HTMLElement;
   menuBackdrop.style.setProperty("--left", `${window.innerWidth / 2}px`);
-  console.log(window.innerWidth / 2)
 
   listItems.forEach((item) => {
     item.addEventListener("mouseenter", () => {
