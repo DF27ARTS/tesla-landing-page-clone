@@ -4,24 +4,43 @@ import HelpIcon from "./HelpIcon.astro";
 import Logo from "./Logo.astro";
 import PersonIcon from "./PersonIcon.astro";
 
-const vehiclesSection = [
-  {
-    img: "vehicles-section/model-s",
-    name: "Model S",
-    links: [ "Learn", "Order" ]
-  }
-]
+import NavbarVehiclesSection from "./NavbarVehiclesSection.astro";
+import NavbarEnergySection from "./NavbarEnergySection.astro";
+import NavbarChargingSection from "./NavbarChargingSection.astro";
+import NavbarDiscoverSection from "./NavbarDiscoverSection.astro";
+import NavbarShopSection from "./NavbarShopSection.astro";
 ---
 
 <header
   id="landing-header"
   class={`
     isolate py-3 px-12 flex items-center fixed top-0 w-full justify-between z-40 text-white [& svg]:transition-colors
-    [&:has(li:hover)>#navbar-container]:pb-16
 
-    [&:has(#vehicles:hover)>#navbar-container>#vehicles-grid]:grid-rows-[1fr]
-    [&:has(#vehicles:hover)>#navbar-container>#vehicles-grid]:pt-16
-  `}
+    [&:has(#vehicles-btn:hover)>#navbar-container>#vehicles-section]:grid-rows-[1fr]
+    [&:has(#vehicles-btn:hover)>#navbar-container>#vehicles-section]:pt-32
+    [&:has(#vehicles-btn:hover)>#navbar-container>#vehicles-section]:opacity-100
+    [&:has(#vehicles-btn:hover)>#navbar-container>#vehicles-section]:pb-16
+
+    [&:has(#energy-btn:hover)>#navbar-container>#energy-section]:grid-rows-[1fr]
+    [&:has(#energy-btn:hover)>#navbar-container>#energy-section]:pt-32
+    [&:has(#energy-btn:hover)>#navbar-container>#energy-section]:opacity-100
+    [&:has(#energy-btn:hover)>#navbar-container>#energy-section]:pb-16
+
+    [&:has(#charging-btn:hover)>#navbar-container>#charging-section]:grid-rows-[1fr]
+    [&:has(#charging-btn:hover)>#navbar-container>#charging-section]:pt-32
+    [&:has(#charging-btn:hover)>#navbar-container>#charging-section]:opacity-100
+    [&:has(#charging-btn:hover)>#navbar-container>#charging-section]:pb-16
+
+    [&:has(#discover-btn:hover)>#navbar-container>#discover-section]:grid-rows-[1fr]
+    [&:has(#discover-btn:hover)>#navbar-container>#discover-section]:pt-32
+    [&:has(#discover-btn:hover)>#navbar-container>#discover-section]:opacity-100
+    [&:has(#discover-btn:hover)>#navbar-container>#discover-section]:pb-16
+
+    [&:has(#shop-btn:hover)>#navbar-container>#shop-section]:grid-rows-[1fr]
+    [&:has(#shop-btn:hover)>#navbar-container>#shop-section]:pt-32
+    [&:has(#shop-btn:hover)>#navbar-container>#shop-section]:opacity-100
+    [&:has(#shop-btn:hover)>#navbar-container>#shop-section]:pb-16
+  `} 
 >
   <div class="flex flex-grow basis-0">
     <Logo />
@@ -29,13 +48,17 @@ const vehiclesSection = [
 
   <nav>
     <ul
-      class="isolate flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+      class={`
+        isolate flex text-sm [&>li>a]:transition-colors 
+        [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium 
+        [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2
+      `}
     >
-      <li id="vehicles" ><a href="#">Vehicles</a></li>
-      <li id="energy" ><a href="#">Energy</a></li>
-      <li id="charging" ><a href="#">Charging</a></li>
-      <li id="discover" ><a href="#">Discover</a></li>
-      <li id="shop" ><a href="#">Shop</a></li>
+      <li id="vehicles-btn" ><a href="#">Vehicles</a></li>
+      <li id="energy-btn" ><a href="#">Energy</a></li>
+      <li id="charging-btn" ><a href="#">Charging</a></li>
+      <li id="discover-btn" ><a href="#">Discover</a></li>
+      <li id="shop-btn" ><a href="#">Shop</a></li>
     </ul>
     <div
       id="menu-backdrop"
@@ -77,79 +100,20 @@ const vehiclesSection = [
   <section 
     id="navbar-container" 
     class={`
-      grid absolute left-0 top-0 px-12 -z-10 
+      grid absolute min-h-[4rem] left-0 top-0 px-12 -z-10 
       w-full bg-white duration-500
-      hover:pb-16
     `}>
 
-    <div 
-      id="vehicles-grid" 
-      class={`
-        grid grid-cols-[repeat(13,1fr)] grid-rows-[0fr] 
-        transition-all duration-500 mt-[4rem] w-full
-        [&>*]:overflow-hidden
-        hover:grid-rows-[1fr] hover:pt-16
-      `}>
-      <div class="grid grid-cols-3 content-center col-[2/9] gap-[1rem] bg-blue-500 ">
-        
-        <div class="grid w-full border-2">
-          <img class="h-full w-full object-cover" src="vehicles-section/model-s.avif" alt="">
-          <h3>Model S</h3>
-          <div class="flex">
-            <a href="#">Learn</a>
-            <a href="#">Order</a>
-          </div>
-        </div>
-        
-        <div class="grid w-full border-2">
-          <img class="h-full w-full object-cover" src="vehicles-section/model-s.avif" alt="">
-          <h3>Model S</h3>
-          <div class="flex">
-            <a href="#">Learn</a>
-            <a href="#">Order</a>
-          </div>
-        </div>
-        
-        <div class="grid w-full border-2">
-          <img class="h-full w-full object-cover" src="vehicles-section/model-s.avif" alt="">
-          <h3>Model S</h3>
-          <div class="flex">
-            <a href="#">Learn</a>
-            <a href="#">Order</a>
-          </div>
-        </div>
-        
-        <div class="grid w-full border-2">
-          <img class="h-full w-full object-cover" src="vehicles-section/model-s.avif" alt="">
-          <h3>Model S</h3>
-          <div class="flex">
-            <a href="#">Learn</a>
-            <a href="#">Order</a>
-          </div>
-        </div>
-        
-        <div class="grid w-full border-2">
-          <img class="h-full w-full object-cover" src="vehicles-section/model-s.avif" alt="">
-          <h3>Model S</h3>
-          <div class="flex">
-            <a href="#">Learn</a>
-            <a href="#">Order</a>
-          </div>
-        </div>
-        
-        <div class="grid w-full border-2">
-          <img class="h-full w-full object-cover" src="vehicles-section/model-s.avif" alt="">
-          <h3>Model S</h3>
-          <div class="flex">
-            <a href="#">Learn</a>
-            <a href="#">Order</a>
-          </div>
-        </div>
-        
-      </div>
+    <NavbarVehiclesSection />
 
-      <div class="col-[11/13] bg-red-500 "></div>
-    </div>
+    <NavbarEnergySection />
+
+    <NavbarChargingSection />
+
+    <NavbarDiscoverSection />
+
+    <NavbarShopSection />
+    
   </section>
 </header>
 

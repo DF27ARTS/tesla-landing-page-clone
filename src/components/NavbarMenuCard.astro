@@ -1,0 +1,23 @@
+---
+const { name, image, links} = Astro.props;
+---
+
+<div class="bg-white/5 flex flex-col items-center justify-center w-full">
+  <img class="h-full w-full object-cover" src={image} alt="">
+  <h2 class="font-[500]" >{name}</h2>
+  {
+    links ? 
+    <div class="flex gap-3">
+      {
+        links.map((link: string) => (
+          <a 
+            class="text-[.8rem] text-gray-600 border-b-[1px] border-current hover:text-gray-800" 
+            href="#">
+            {link}
+          </a>
+        ))
+      }
+    </div>
+    : null
+  }
+</div>

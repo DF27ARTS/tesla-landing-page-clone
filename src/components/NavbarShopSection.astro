@@ -1,0 +1,46 @@
+---
+import NavbarMenuCard from "./NavbarMenuCard.astro";
+
+const section = {
+  cards: [
+    {
+      image: "shop-section/charging.avif",
+      name: "Charging",
+    },
+    {
+      image: "shop-section/vehicle-accessories.avif",
+      name: "Vehicle Accessories",
+    },
+    {
+      image: "shop-section/apparel.avif",
+      name: "Apparel",
+    },
+    {
+      image: "shop-section/lifestyle.avif",
+      name: "Lifestyle",
+    },
+  ]
+}
+
+---
+
+<div 
+    id="shop-section" 
+    class={`
+    realative grid grid-cols-12 grid-rows-[0fr] 
+    transition-all duration-500 w-full opacity-0
+    [&>*]:overflow-hidden hover:opacity-100
+    hover:grid-rows-[1fr] hover:pt-32 hover:pb-16
+    `}>
+
+    <div id="cards-grid" class="grid grid-cols-4 content-center col-[3/11] gap-[1rem]">
+    {
+        section.cards.map((card) => (
+        <NavbarMenuCard
+            name={card.name}
+            image={card.image}
+        />
+        ))
+    }
+    </div>
+</div>

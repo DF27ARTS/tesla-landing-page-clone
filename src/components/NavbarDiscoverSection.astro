@@ -1,0 +1,69 @@
+---
+import NavbarMenuCard from "./NavbarMenuCard.astro";
+
+const section = {
+  cards: [
+    {
+      subtitle: "Resources",
+      options: [
+        "Demo Drive",
+        "Insurance",
+        "Video Guides",
+        "Customer Stories",
+        "Events",
+      ]
+    },
+    {
+      subtitle: "Location Services",
+      options: [
+        "Find Us",
+        "Trip Planner",
+        "Find a Collision Center",
+        "Find a Certified Installer",
+      ]
+    },
+    {
+      subtitle: "Company",
+      options: [
+        "About",
+        "Careers",
+        "Investor Relations",
+      ]
+    },
+  ],
+}
+
+---
+
+<div 
+    id="discover-section" 
+    class={`
+    realative grid grid-cols-12 grid-rows-[0fr] 
+    transition-all duration-500 w-full opacity-0
+    [&>*]:overflow-hidden hover:opacity-100
+    hover:grid-rows-[1fr] hover:pt-32 hover:pb-16
+    `}>
+
+    <div id="cards-grid" class="grid grid-cols-3 content-center col-[4/10]">
+        {
+            section.cards.map((card) => (
+               <div class="[&:nth-child(1)]:mr-6 [&:nth-child(3)]:ml-6 flex flex-grow flex-col gap-3 min-w-max px-2 pt-4 pb-8">
+                    <h3 class="mb-2 text-sm font-normal" >{card.subtitle}</h3>
+                    
+                    {
+                        card.options.map((option) => (
+                            <a 
+                                href="#" 
+                                class={`
+                                relative w-fit font-[500] text-sm before:opacity-0 before:transition-opacity before:duration-500
+                                hover:before:opacity-100 hover:before:bottom-0 hover:before:left-0 hover:before:absolute
+                                hover:before:w-full hover:before:h-[.125rem] hover:before:bg-current
+                                `}
+                            >{option}</a>
+                        ))
+                    }
+                </div>
+            ))
+        }
+    </div>
+</div>

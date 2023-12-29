@@ -1,0 +1,88 @@
+---
+import NavbarMenuCard from "./NavbarMenuCard.astro";
+
+const section = {
+  cards: [
+    {
+      image: "vehicles-section/model-s.avif",
+      name: "Model S",
+      links: [ "Learn", "Order" ]
+    },
+    {
+      image: "vehicles-section/model-3.avif",
+      name: "Model 3",
+      links: [ "Learn", "Order" ]
+    },
+    {
+      image: "vehicles-section/model-x.avif",
+      name: "Model X",
+      links: [ "Learn", "Order" ]
+    },
+    {
+      image: "vehicles-section/model-y.avif",
+      name: "Model Y",
+      links: [ "Learn", "Order" ]
+    },
+    {
+      image: "vehicles-section/cybertruck.avif",
+      name: "Cybertruck",
+      links: [ "Learn", "Order" ]
+    },
+    {
+      image: "vehicles-section/help-me-choose.png",
+      name: "Help Me Choose",
+      links: [ "Get Started" ]
+    },
+  ],
+  options: [
+    "Inventory",
+    "Used Cars",
+    "Demo Drive",
+    "Trade-in",
+    "Compare",
+    "Fleet",
+    "Semi",
+    "Roadster",
+  ]
+}
+
+---
+
+<div 
+    id="vehicles-section" 
+    class={`
+    realative grid grid-cols-12 grid-rows-[0fr] 
+    transition-all duration-500 w-full opacity-0
+    [&>*]:overflow-hidden hover:opacity-100
+    hover:grid-rows-[1fr] hover:pt-32 hover:pb-16
+    `}>
+
+    <div id="cards-grid" class="grid grid-cols-3 content-center col-[2/9] gap-[1rem]">
+    {
+        section.cards.map((card) => (
+        <NavbarMenuCard
+            name={card.name}
+            image={card.image}
+            links={card.links}
+        />
+        ))
+    }
+    </div>
+
+    <div class="h-full w-[1px] bg-gray-200 mx-auto"></div>
+
+    <div id="navbar-menu" class="flex flex-col gap-2 col-[10/12] [&:fist-child]:mt-2">
+    {
+        section.options.map((option) => (
+        <a 
+            href="#" 
+            class={`
+            relative w-fit font-[500] text-sm before:opacity-0 before:transition-opacity before:duration-500
+            hover:before:opacity-100 hover:before:bottom-0 hover:before:left-0 hover:before:absolute
+            hover:before:w-full hover:before:h-[.125rem] hover:before:bg-current
+            `}
+        >{option}</a>
+        ))
+    }
+    </div>
+</div>
