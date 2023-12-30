@@ -14,7 +14,12 @@ import NavbarShopSection from "./NavbarShopSection.astro";
 <header
   id="landing-header"
   class={`
-    isolate py-3 px-12 flex items-center fixed top-0 w-full justify-between z-40 text-white [& svg]:transition-colors
+    isolate py-3 px-12 flex items-center fixed top-0 w-full justify-between z-40 text-white
+
+    [&:has(li:hover)]:text-gray-900
+    [&:has(#navbar-container:hover)]:text-gray-900
+    [&:has(li:hover)>#navbar-container]:opacity-100
+    [&:has(#navbar-container:hover)>#navbar-container]:opacity-100
 
     [&:has(#vehicles-btn:hover)>#navbar-container>#vehicles-section]:grid-rows-[1fr]
     [&:has(#vehicles-btn:hover)>#navbar-container>#vehicles-section]:pt-32
@@ -51,8 +56,8 @@ import NavbarShopSection from "./NavbarShopSection.astro";
       class={`
         isolate flex text-sm [&>li>a]:transition-colors 
         [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium 
-        [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2
-      `}
+        [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 
+    `}
     >
       <li id="vehicles-btn" ><a href="#">Vehicles</a></li>
       <li id="energy-btn" ><a href="#">Energy</a></li>
@@ -100,7 +105,7 @@ import NavbarShopSection from "./NavbarShopSection.astro";
   <section 
     id="navbar-container" 
     class={`
-      grid absolute min-h-[4rem] left-0 top-0 px-12 -z-10 
+      grid absolute left-0 top-0 px-12 -z-10 opacity-0 transition-[opacity] 
       w-full bg-white duration-500
     `}>
 
@@ -158,8 +163,10 @@ import NavbarShopSection from "./NavbarShopSection.astro";
       const { isIntersecting } = entry;
 
       if (isIntersecting) {
-        const color = entry.target.getAttribute("data-header-color");
-        headerElement.style.color = color;
+        const textColor = entry.target.getAttribute("data-header-color");
+
+        headerElement.classList.remove(...["text-white", "text-gray-900"]);
+        headerElement.classList.add(textColor);
       }
     });
   }, observerOptions);
