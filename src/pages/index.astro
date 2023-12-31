@@ -14,19 +14,35 @@ import Section from "../components/Section.astro";
         title="Model Y"
         subtitle="Lease starting at $399/mo*"
         textColor="text-white"
+        timelineName="--model-y-animation"
       >
-        <div slot="footer">
+        <div class="flex gap-6 justify-center" slot="footer">
           <a
-            class="border-[3px] border-white bg-white/5 backdrop-blur-sm rounded font-medium text-white px-12 py-2 hover:bg-white hover:text-black transition-colors"
+            class={`
+              w-[17rem] text-center text-sm bg-transparent overflow-hidden rounded font-medium isolation
+              text-black py-2 transition-colors relative before:absolute before:inset-0 before:bg-white/50
+              before:-z-10
+            `}
             href="#"
           >
-            Prueba de conducción</a
+            Explore Inventory
+          </a>
+
+          <a
+            class="w-[17rem] text-center text-sm bg-black/5 backdrop-blur-[3rem] rounded font-medium text-white py-2 transition-colors"
+            href="#"
           >
+            Demo Drive
+          </a>
         </div>
+
+        <p class="w-fit text-white text-[.8rem]" slot="footer-message" >
+          *Excludes taxes and fees with price subject to change. Available in select states. <a class="underline underline-offset-4" href="#" >See Details</a>
+        </p>
 
         <div
           slot="background"
-          class="absolute top-0 bottom-0 h-full w-full z-10"
+          class="absolute top-0 bottom-0 h-full w-full -z-10"
         >
           <video
             class="object-cover min-h-full w-full"
@@ -39,6 +55,41 @@ import Section from "../components/Section.astro";
     </div>
 
     <div class="snap-center">
+      <Section
+        title="Model X"
+        subtitle="Lease starting at $377/mo*"
+        textColor="text-white"
+        timelineName="--model-x-animation"
+      >
+        <div class="flex gap-6 justify-center" slot="footer">
+          <a
+            class="w-[17rem]  text-center text-sm bg-white/50 backdrop-blur-md rounded font-medium text-black py-2 transition-colors"
+            href="#"
+          >
+            Explore Inventory
+          </a>
+        </div>
+
+        <p class="w-fit text-white text-[.8rem]" slot="footer-message" >
+          *Excludes taxes and fees with price subject to change. Available in select states. <a href="#" >See Details</a>
+        </p>
+
+        <div
+          slot="background"
+          class="absolute top-0 bottom-0 h-full w-full -z-10"
+        >
+          <video
+            class="object-cover min-h-full w-full"
+            autoplay
+            muted
+            loop
+            src="/video.mp4"></video>
+        </div>
+      </Section>
+    </div>
+
+
+    <!-- <div class="snap-center">
       <Section
         title="Model 3"
         subtitle="Lease starting at $329/mo*"
@@ -269,6 +320,6 @@ import Section from "../components/Section.astro";
           />
         </div>
       </Section>
-    </div>
+    </div> -->
   </main>
 </Layout>

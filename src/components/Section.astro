@@ -1,27 +1,59 @@
 ---
-const { textColor, title, subtitle } = Astro.props;
+const { textColor, title, subtitle, timelineName } = Astro.props;
 ---
 
 <section
-  class="landing-section bg-black h-screen w-full text-center relative overflow-hidden"
+  id="section"
+  class="landing-section h-screen w-full text-center relative overflow-hidden"
   data-header-color={textColor}
+  style={{"--timeline-name": timelineName}}
 >
-  <div class="z-30 relative h-full flex flex-col items-center">
-    <header>
-      <h2 class={`${textColor} pt-20 text-[40px] font-mefium`}>
+  <div id="content" class="z-300 flex flex-col items-center">
+    <header class="fixed top-0 left-0 right-0 mx-auto flex flex-col gap-1 w-fit mt-16" >
+      <h2 class={`w-full ${textColor} text-[40px] font-mefium`}>
         {title}
       </h2>
-      <p class={`${textColor} text-lg`}>
+      <p class={`w-full ${textColor} text-lg`}>
         {subtitle}
       </p>
     </header>
 
-    <footer class="flex flex-col flex-grow flex-nowrap justify-end pb-20">
-      <div>
-        <slot name="footer" />
+    <footer class="fixed top-0 left-0 right-0 mx-auto flex flex-col gap-8 mt-[calc(100vh-7rem)] flex-nowrap">
+      <slot name="footer" />
+
+      <div class="mx-auto w-[450rem]">
+        <slot name="footer-message"></slot>
       </div>
     </footer>
   </div>
 
   <slot name="background" />
 </section>
+
+<style>
+
+  #section {
+    view-timeline-name: var(--timeline-name);
+    view-timeline-axis: block;
+  }
+
+  #content {
+    opacity: 0;
+
+    animation-timeline: var(--timeline-name);
+    animation-range: entry 60% cover 70%;
+    animation-name: fade-in-and-out;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fade-in-and-out {
+    0%, 100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    40%, 60% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+</style>
