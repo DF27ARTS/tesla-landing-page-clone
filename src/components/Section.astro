@@ -21,7 +21,7 @@ const { textColor, title, subtitle, timelineName } = Astro.props;
     <footer class="fixed top-0 left-0 right-0 mx-auto flex flex-col gap-8 mt-[calc(100vh-7rem)] flex-nowrap">
       <slot name="footer" />
 
-      <div class="mx-auto w-[450rem]">
+      <div>
         <slot name="footer-message"></slot>
       </div>
     </footer>
