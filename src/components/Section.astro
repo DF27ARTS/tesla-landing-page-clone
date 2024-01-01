@@ -8,8 +8,8 @@ const { textColor, title, subtitle, timelineName } = Astro.props;
   data-header-color={textColor}
   style={{"--timeline-name": timelineName}}
 >
-  <div id="content" class="z-300 flex flex-col items-center">
-    <header class="fixed top-0 left-0 right-0 mx-auto flex flex-col gap-1 w-fit mt-16" >
+  <div id="content" class="z-300 flex flex-col items-center justify-between h-full">
+    <header class="flex flex-col gap-1 w-fit mt-16" >
       <h2 class={`w-full ${textColor} text-[40px] font-mefium`}>
         {title}
       </h2>
@@ -18,7 +18,7 @@ const { textColor, title, subtitle, timelineName } = Astro.props;
       </p>
     </header>
 
-    <footer class="fixed top-0 left-0 right-0 mx-auto flex flex-col gap-8 mt-[calc(100vh-7rem)] flex-nowrap">
+    <footer class="flex flex-col gap-8 flex-nowrap pb-2">
       <slot name="footer" />
 
       <div>
@@ -31,29 +31,48 @@ const { textColor, title, subtitle, timelineName } = Astro.props;
 </section>
 
 <style>
+  @supports
+      (view-timeline-name: var(--timeline-name)) and
+      (view-timeline-axis: block) and
+      (animation-timeline: var(--timeline-name)) and
+      (animation-range: entry 60% cover 70%)
+    {
 
-  #section {
-    view-timeline-name: var(--timeline-name);
-    view-timeline-axis: block;
-  }
+      #content header, #content footer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+      }
 
-  #content {
-    opacity: 0;
+      #content footer {
+        margin-top: calc(100vh - 7rem);
+      }
 
-    animation-timeline: var(--timeline-name);
-    animation-range: entry 60% cover 70%;
-    animation-name: fade-in-and-out;
-    animation-fill-mode: both;
-  }
-
-  @keyframes fade-in-and-out {
-    0%, 100% {
-      opacity: 0;
-      visibility: hidden;
+      #section {
+        view-timeline-name: var(--timeline-name);
+        view-timeline-axis: block;
+      }
+    
+      #content {
+        opacity: 0;
+    
+        animation-timeline: var(--timeline-name);
+        animation-range: entry 60% cover 70%;
+        animation-name: fade-in-and-out;
+        animation-fill-mode: both;
+      }
+    
+      @keyframes fade-in-and-out {
+        0%, 100% {
+          opacity: 0;
+          visibility: hidden;
+        }
+        40%, 60% {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
-    40%, 60% {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
 </style>
