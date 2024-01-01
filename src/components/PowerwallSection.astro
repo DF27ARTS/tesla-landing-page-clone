@@ -1,0 +1,34 @@
+---
+import Section from "./Section.astro";
+---
+
+<Section
+    title="Powerwall"
+    subtitle=""
+    textColor="text-gray-900"
+    timelineName="--powerwall-animation"
+>
+    <div class="flex gap-6 justify-center isolate" slot="footer">
+        <a
+            class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
+            href="#"
+        >
+            Order Now
+        </a>
+
+        <a
+            class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
+            href="#"
+        >
+            Learn More
+        </a>
+    </div>
+
+    <div slot="background" class="absolute top-0 bottom-0 h-full w-full -z-10">
+        <img
+            class="object-cover min-h-full w-full"
+            src="/powerwall-img.avif"
+            alt="Tesla Model-3 image"
+        />
+    </div>
+</Section>

@@ -1,0 +1,40 @@
+---
+import Section from "./Section.astro";
+---
+
+<Section
+    title="Accessories"
+    subtitle=""
+    textColor="text-gray-900"
+    timelineName="--accessories-animation"
+>
+    <div class="flex gap-6 justify-center isolate" slot="footer">
+        <a
+            class="w-[17rem] text-center text-sm bg-white rounded font-medium text-black py-2 transition-colors"
+            href="#"
+        >
+            Shop Now
+        </a>
+    </div>
+
+    <p
+        class="flex gap-4 w-fit text-[.8rem] mx-auto text-white/90 max-w-[45rem]"
+        slot="footer-message"
+    >
+        <a href="#"> Tesla © 2023</a>
+        <a href="#"> Privacy & Legal</a>
+        <a href="#"> Vehicle Recalls</a>
+        <a href="#"> Contact</a>
+        <a href="#"> News</a>
+        <a href="#"> Get Updates</a>
+        <a href="#"> Locations</a>
+    </p>
+
+    <div slot="background" class="absolute top-0 bottom-0 h-full w-full -z-10">
+        <img
+            class="object-cover min-h-full w-full"
+            src="/accessories-img.avif"
+            alt="Tesla Model-3 image"
+        />
+    </div>
+</Section>

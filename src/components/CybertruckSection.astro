@@ -1,0 +1,44 @@
+---
+import Section from "./Section.astro";
+---
+
+<Section
+    title=""
+    subtitle=""
+    textColor="text-gray-900"
+    timelineName="--cybertruck-animation"
+>
+    <div class="flex gap-6 justify-center isolate" slot="footer">
+        <a
+            class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
+            href="#"
+        >
+            Order Now
+        </a>
+
+        <a
+            class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
+            href="#"
+        >
+            Learn More
+        </a>
+    </div>
+
+    <p
+        class="w-fit text-current text-[.8rem] text-gray-900 mx-auto max-w-[35rem]"
+        slot="footer-message"
+    >
+        *Price before savings is $74,990, excluding taxes and fees. Subject to
+        change. <a class="underline underline-offset-4" href="#"
+            >Learn about est. gas savings.</a
+        >
+    </p>
+
+    <div slot="background" class="absolute top-0 bottom-0 h-full w-full -z-10">
+        <img
+            class="object-cover min-h-full w-full"
+            src="/cybertruck-img.avif"
+            alt="Tesla Model-3 image"
+        />
+    </div>
+</Section>

@@ -1,8 +1,17 @@
 ---
 import LandingHeader from "../components/LandingHeader.astro";
-import HeroSection from "../components/HeroSection.astro";
 import Layout from "../layouts/Layout.astro";
-import Section from "../components/Section.astro";
+
+import ModelYSection from "../components/ModelYSection.astro";
+import Model3Section from "../components/Model3Section.astro";
+import ModelXSection from "../components/ModelXSection.astro";
+import ModelSSection from "../components/ModelSSection.astro";
+import CybertruckSection from "../components/CybertruckSection.astro";
+import ExperienceTeslaSection from "../components/ExperienceTeslaSection.astro";
+import SolarPanelsSection from "../components/SolarPanelsSection.astro";
+import SolarRoofSection from "../components/SolarRoofSection.astro";
+import PowerwallSection from "../components/PowerwallSection.astro";
+import AccessoriesSection from "../components/AccessoriesSection.astro";
 ---
 
 <Layout title="Tesla Motors">
@@ -10,381 +19,43 @@ import Section from "../components/Section.astro";
 
   <main class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
     <div class="snap-center">
-      <Section
-        title="Model Y"
-        subtitle="Lease starting at $399/mo*"
-        textColor="text-white"
-        timelineName="--model-y-animation"
-      >
-        <div class="flex gap-6 justify-center isolate" slot="footer">
-          <a
-            class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
-            href="#"
-          >
-            Explore Inventory
-          </a>
-
-          <a
-            class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
-            href="#"
-          >
-            Demo Drive
-          </a>
-        </div>
-
-        <p class="w-fit text-[.8rem] mx-auto text-white max-w-[45rem]" slot="footer-message" >
-          *Excludes taxes and fees with price subject to change. Available in select states. <a class="underline underline-offset-4" href="#" >See Details</a>
-        </p>
-
-        <div
-          slot="background"
-          class="absolute top-0 bottom-0 h-full w-full -z-10"
-        >
-          <video
-            class="object-cover min-h-full w-full"
-            autoplay
-            muted
-            loop
-            src="/video.mp4"></video>
-        </div>
-      </Section>
+      <ModelYSection />
     </div>
 
     <div class="snap-center">
-      <Section
-        title="Model 3"
-        subtitle="Lease starting at $329/mo*"
-        textColor="text-white"
-        timelineName="--model-3-animation"
-      >
-        <div class="flex gap-6 justify-center isolate" slot="footer">
-          <a
-            class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
-            href="#"
-          >
-            Explore Inventory
-          </a>
-
-          <a
-            class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
-            href="#"
-          >
-            Demo Drive
-          </a>
-        </div>
-
-        <p class="w-fit text-current text-[.8rem] text-white mx-auto max-w-[45rem]" slot="footer-message" >
-          *Excludes taxes and fees with price subject to change. Available in select states. <a class="underline underline-offset-4" href="#" >See Details</a>
-        </p>
-
-        <div
-          slot="background"
-          class="absolute top-0 bottom-0 h-full w-full -z-10"
-        >
-          <img
-            class="object-cover min-h-full w-full"
-            src="/model-3-img.avif"
-            alt="Tesla Model-3 image"
-          />
-        </div>
-      </Section>
+      <Model3Section />
     </div>
 
     <div class="snap-center">
-      <Section
-        title="Model X"
-        subtitle="From $68,590*"
-        textColor="text-gray-900"
-        timelineName="--model-x-animation"
-      >
-        <div class="flex gap-6 justify-center isolate" slot="footer">
-          <a
-            class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
-            href="#"
-          >
-            Explore Inventory
-          </a>
-
-          <a
-            class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
-            href="#"
-          >
-            Demo Drive
-          </a>
-        </div>
-
-        <p class="w-fit text-current text-[.8rem] text-white mx-auto max-w-[40rem]" slot="footer-message" >
-          *Price before incentives and savings is $79,990, excluding taxes and fees. Subject to change. <a class="underline underline-offset-4" href="#" >Learn about est. gas savings.</a>
-        </p>
-
-        <div
-          slot="background"
-          class="absolute top-0 bottom-0 h-full w-full -z-10"
-        >
-          <img
-            class="object-cover min-h-full w-full"
-            src="/model-x-img.avif"
-            alt="Tesla Model-3 image"
-          />
-        </div>
-      </Section>
+      <ModelXSection />
     </div>
 
     <div class="snap-center">
-      <Section
-        title="Model S"
-        subtitle="From $71,090*"
-        textColor="text-gray-900"
-        timelineName="--model-s-animation"
-      >
-        <div class="flex gap-6 justify-center isolate" slot="footer">
-          <a
-            class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
-            href="#"
-          >
-            Explore Inventory
-          </a>
-
-          <a
-            class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
-            href="#"
-          >
-            Demo Drive
-          </a>
-        </div>
-
-        <p class="w-fit text-current text-[.8rem] text-gray-900 mx-auto max-w-[35rem]" slot="footer-message" >
-          *Price before savings is $74,990, excluding taxes and fees. Subject to change. <a class="underline underline-offset-4" href="#" >Learn about est. gas savings.</a>
-        </p>
-
-        <div
-          slot="background"
-          class="absolute top-0 bottom-0 h-full w-full -z-10"
-        >
-          <img
-            class="object-cover min-h-full w-full"
-            src="/model-s-img.avif"
-            alt="Tesla Model-3 image"
-          />
-        </div>
-      </Section>
+      <ModelSSection />
     </div>
 
     <div class="snap-center">
-      <Section
-        title=""
-        subtitle=""
-        textColor="text-gray-900"
-        timelineName="--cybertruck-animation"
-      >
-        <div class="flex gap-6 justify-center isolate" slot="footer">
-          <a
-            class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
-            href="#"
-          >
-            Order Now
-          </a>
-
-          <a
-            class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
-            href="#"
-          >
-            Learn More
-          </a>
-        </div>
-
-        <p class="w-fit text-current text-[.8rem] text-gray-900 mx-auto max-w-[35rem]" slot="footer-message" >
-          *Price before savings is $74,990, excluding taxes and fees. Subject to change. <a class="underline underline-offset-4" href="#" >Learn about est. gas savings.</a>
-        </p>
-
-        <div
-          slot="background"
-          class="absolute top-0 bottom-0 h-full w-full -z-10"
-        >
-          <img
-            class="object-cover min-h-full w-full"
-            src="/cybertruck-img.avif"
-            alt="Tesla Model-3 image"
-          />
-        </div>
-      </Section>
+      <CybertruckSection />
     </div>
 
     <div class="snap-center">
-      <Section
-        title="Experience Tesla"
-        subtitle="Schedule a Demo Drive Today"
-        textColor="text-white"
-        timelineName="--experience-tesla-animation"
-      >
-        <div class="flex gap-6 justify-center isolate" slot="footer">
-          <a
-            class="w-[17rem] text-center text-sm border-[3px] rounded font-medium text-white py-2 transition-colors"
-            href="#"
-          >
-            Demo Drive
-          </a>
-        </div>
-
-        <div
-          slot="background"
-          class="absolute top-0 bottom-0 h-full w-full -z-10"
-        >
-          <video
-            class="object-cover min-h-full w-full"
-            autoplay
-            muted
-            loop
-            src="/video-two.webm"></video>
-        </div>
-      </Section>
+      <ExperienceTeslaSection />
     </div>
 
     <div class="snap-center">
-      <Section
-        title="Solar Panels"
-        subtitle="Schedule a Virtual Consultation"
-        textColor="text-gray-900"
-        timelineName="--solar-panels-animation"
-      >
-        <div class="flex gap-6 justify-center isolate" slot="footer">
-          <a
-            class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
-            href="#"
-          >
-            Order Now
-          </a>
-
-          <a
-            class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
-            href="#"
-          >
-            Learn More
-          </a>
-        </div>
-
-        <div
-          slot="background"
-          class="absolute top-0 bottom-0 h-full w-full -z-10"
-        >
-          <img
-            class="object-cover min-h-full w-full"
-            src="/solar-panels-img.avif"
-            alt="Tesla Model-3 image"
-          />
-        </div>
-      </Section>
+      <SolarPanelsSection />
     </div>
 
     <div class="snap-center">
-      <Section
-        title="Solar Roof"
-        subtitle="Produce Clean Energy From Your Roof"
-        textColor="text-gray-900"
-        timelineName="--solar-roof-animation"
-      >
-        <div class="flex gap-6 justify-center isolate" slot="footer">
-          <a
-            class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
-            href="#"
-          >
-            Order Now
-          </a>
-
-          <a
-            class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
-            href="#"
-          >
-            Learn More
-          </a>
-        </div>
-
-        <div
-          slot="background"
-          class="absolute top-0 bottom-0 h-full w-full -z-10"
-        >
-          <img
-            class="object-cover min-h-full w-full"
-            src="/solar-roof-img.avif"
-            alt="Tesla Model-3 image"
-          />
-        </div>
-      </Section>
+      <SolarRoofSection />
     </div>
 
     <div class="snap-center">
-      <Section
-        title="Powerwall"
-        subtitle=""
-        textColor="text-gray-900" 
-        timelineName="--powerwall-animation"
-      >
-        <div class="flex gap-6 justify-center isolate" slot="footer">
-          <a
-            class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
-            href="#"
-          >
-            Order Now
-          </a>
-
-          <a
-            class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
-            href="#"
-          >
-            Learn More
-          </a>
-        </div>
-
-        <div
-          slot="background"
-          class="absolute top-0 bottom-0 h-full w-full -z-10"
-        >
-          <img
-            class="object-cover min-h-full w-full"
-            src="/powerwall-img.avif"
-            alt="Tesla Model-3 image"
-          />
-        </div>
-      </Section>
+      <PowerwallSection />
     </div>
 
     <div class="snap-center">
-      <Section
-        title="Accessories"
-        subtitle=""
-        textColor="text-gray-900" 
-        timelineName="--accessories-animation"
-      >
-        <div class="flex gap-6 justify-center isolate" slot="footer">
-          <a
-            class="w-[17rem] text-center text-sm bg-white rounded font-medium text-black py-2 transition-colors"
-            href="#"
-          >
-            Shop Now
-          </a>
-        </div>
-
-        <p class="flex gap-4 w-fit text-[.8rem] mx-auto text-white/90 max-w-[45rem]" slot="footer-message" >
-          <a href="#" > Tesla © 2023 </a>
-          <a href="#" > Privacy & Legal </a>
-          <a href="#" > Vehicle Recalls </a>
-          <a href="#" > Contact </a>
-          <a href="#" > News </a>
-          <a href="#" > Get Updates </a>
-          <a href="#" > Locations </a>
-        </p>
-
-        <div
-          slot="background"
-          class="absolute top-0 bottom-0 h-full w-full -z-10"
-        >
-          <img
-            class="object-cover min-h-full w-full"
-            src="/accessories-img.avif"
-            alt="Tesla Model-3 image"
-          />
-        </div>
-      </Section>
+      <AccessoriesSection />
     </div>
   </main>
 </Layout>

@@ -1,0 +1,43 @@
+---
+import Section from "./Section.astro";
+---
+
+<Section
+  title="Model Y"
+  subtitle="Lease starting at $399/mo*"
+  textColor="text-white"
+  timelineName="--model-y-animation"
+>
+  <div class="flex gap-6 justify-center isolate" slot="footer">
+    <a
+      class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
+      href="#"
+    >
+      Explore Inventory
+    </a>
+
+    <a
+      class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
+      href="#"
+    >
+      Demo Drive
+    </a>
+  </div>
+
+  <p
+    class="w-fit text-[.8rem] mx-auto text-white max-w-[45rem]"
+    slot="footer-message"
+  >
+    *Excludes taxes and fees with price subject to change. Available in select
+    states. <a class="underline underline-offset-4" href="#">See Details</a>
+  </p>
+
+  <div slot="background" class="absolute top-0 bottom-0 h-full w-full -z-10">
+    <video
+      class="object-cover min-h-full w-full"
+      autoplay
+      muted
+      loop
+      src="/video.mp4"></video>
+  </div>
+</Section>

@@ -1,0 +1,44 @@
+---
+import Section from "./Section.astro";
+---
+
+<Section
+    title="Model 3"
+    subtitle="Lease starting at $329/mo*"
+    textColor="text-white"
+    timelineName="--model-3-animation"
+>
+    <div class="flex gap-6 justify-center isolate" slot="footer">
+        <a
+            class="w-[17rem] text-center text-sm bg-white/60 rounded font-medium text-black py-2 transition-colors"
+            href="#"
+        >
+            Explore Inventory
+        </a>
+
+        <a
+            class="w-[17rem] text-center text-sm bg-black/60 rounded font-medium text-white py-2 transition-colors"
+            href="#"
+        >
+            Demo Drive
+        </a>
+    </div>
+
+    <p
+        class="w-fit text-current text-[.8rem] text-white mx-auto max-w-[45rem]"
+        slot="footer-message"
+    >
+        *Excludes taxes and fees with price subject to change. Available in
+        select states. <a class="underline underline-offset-4" href="#"
+            >See Details</a
+        >
+    </p>
+
+    <div slot="background" class="absolute top-0 bottom-0 h-full w-full -z-10">
+        <img
+            class="object-cover min-h-full w-full"
+            src="/model-3-img.avif"
+            alt="Tesla Model-3 image"
+        />
+    </div>
+</Section>
